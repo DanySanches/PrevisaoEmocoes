@@ -1,0 +1,90 @@
+<html>
+
+<head>
+  <title>Emoção Em Emoji</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS do Bootstrap 5.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- jQuery 3.6.0 (necessário para o Bootstrap 5.3) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Scripts do Bootstrap 5.3 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="container text-center">
+
+      <!-- podemos mudar a class do  btn -->
+      <h3 class="btn btn-success heading">APP EMOÇÃO EM EMOJI
+        <br>
+       <!-- os valores decimais são os  emojis -->
+        <span>&#128522;</span>
+        <span>&#128512;</span>
+        <span>&#128532;</span>
+        <span>&#128546;</span>
+        <span>&#128545;</span>
+        <span>&#128548;</span>
+      </h3>
+
+      <br><br>
+
+      <p style="font-size: 22px;">Tire sua selfie para gerar o emoji
+        <br>
+        <b style="color: yellow">Você está Feliz?</b>
+        <br>
+        <b style="color: black">Você está Triste?</b>
+        <br>
+        <b style="color: red">Você está Irritado?</b>
+        <br>
+      </p>
+
+      <!-- colocamos a class de bootstrap d-flex=display flexivel  para organizar
+      elementos facilmente, seja  horizontal ou  vertical que se ajusta automaticamente
+      ao  tamanho do container as dimensões da  tela, e o mx é utilizado para adicionar 
+      a margem horizontal de 0 a 5  -->
+      <div class="d-flex mx-4">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <label>Visualização da Webcam:</label>
+        <!-- class mt margem  top -2 e margem x automatico -->
+        <div id="camera" class="mt-2 mx-auto"></div>
+        <br><br>
+        <!-- podemos trocar a  class do botão -->
+        <button onclick="takeSnapshot();" class="btn btn-warning">Capturar Imagem</button>
+      </div>
+
+   
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <label>Previsão 1: </label>
+        <p class="emotionName" id="resultEmotionName"></p>
+        <p class="emoji" id="updateEmoji"></p>
+
+        <label>Previsão 2: </label>
+        <p class="emotionName" id="resultEmotionName2"></p>
+        <p class="emoji" id="updateEmoji2"></p>
+      </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <label>Foto: </label>
+        <div id="result"  class="mt-2 mx-auto"></div>
+        <br><br>
+        <button onclick="check();" class="btn btn-success">Prever Emoção</button>
+      </div>
+      </div>
+ 
+
+    
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
